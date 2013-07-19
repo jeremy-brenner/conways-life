@@ -4,7 +4,12 @@ require 'conways_life/grid/cell'
 
 class ConwaysLife
   def initialize ( initial_state = [] )
-    @state = Grid.new initial_state 
-    p @state
+    @grid = Grid.new initial_state 
+  end
+  def run ( iterations )
+    iterations.times do |i|
+       @grid.tick
+       print "#{i+1}: #{ @grid.to_a }\n"
+    end
   end
 end
