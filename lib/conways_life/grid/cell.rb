@@ -38,7 +38,7 @@ class ConwaysLife
     private
 
       def coord_sym ( coords )
-        "#{coords[0]}x#{coords[1]}".to_sym
+        "#{coords[0]},#{coords[1]}".to_sym
       end 
 
       def neighbor_coords

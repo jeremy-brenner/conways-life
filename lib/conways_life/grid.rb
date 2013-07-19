@@ -1,6 +1,6 @@
 class ConwaysLife
   class Grid
-    
+
     attr_reader :iteration
 
     def initialize( initial_state )
@@ -51,7 +51,7 @@ class ConwaysLife
       end
 
       baby_cells.each do |location,neighbor_count|
-        new_grid[location] ||= Cell.new( location.to_s.split('x') ) if neighbor_count == 3
+        new_grid[location] ||= Cell.new( location.to_s.split(',') ) if neighbor_count == 3
       end
 
       @grid = new_grid
