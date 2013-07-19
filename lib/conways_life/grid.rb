@@ -59,7 +59,7 @@ class ConwaysLife
     end
 
     def to_a
-      @grid.keys
+      @grid.values.map { |cell| [ cell.x, cell.y ] }
     end
 
   end

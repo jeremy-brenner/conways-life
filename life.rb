@@ -8,5 +8,5 @@ life = ConwaysLife.new( initial_state )
 
 1000.times do
   life.tick(1)
-  print life.state
+  print life.state + "\n"
 end
