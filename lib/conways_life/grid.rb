@@ -1,16 +1,20 @@
 class ConwaysLife
   class Grid
+    
+    attr_reader :iteration
+
     def initialize( initial_state )
       build_grid initial_state
     end
 
     def tick
       find_neighbors
-      tick_cells
+      rebuild_grid
+      @iteration+=1
     end
 
-    # builds the grid as an aray using Array.combination to find neighbors
     def build_grid( state )
+      @iteration = 0
       @grid = {}
       state.each do |coords| 
         c = Cell.new(coords)
@@ -27,24 +31,31 @@ class ConwaysLife
       end
     end
 
-    def tick_cells
+    def rebuild_grid
+
       new_grid = {}
       baby_cells = Hash.new(0)
+
       @grid.each do |key,cell|
+
+        #touch possible babies
         cell.neighbors.each do |baby|
-          baby_cells[ "#{baby[0]}x#{baby[1]}".to_sym ] += 1
+          baby_cells[ baby ] += 1
         end
+
+        # reset and copy cell to new grid if it lives
         if cell.fate 
           new_grid[cell.to_sym] = cell.reset
         end
+
       end
 
-      baby_cells.each do |k,v|
-        if v == 3
-          new_grid[k] = Cell.new( k.to_s.split('x') )
-        end
+      baby_cells.each do |location,neighbor_count|
+        new_grid[location] ||= Cell.new( location.to_s.split('x') ) if neighbor_count == 3
       end
+
       @grid = new_grid
+
     end
 
     def to_a
