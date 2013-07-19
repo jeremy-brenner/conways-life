@@ -14,5 +14,6 @@ Gem::Specification.new do |s|
     README.md
     conways-life.gemspec
   ]
+  s.require_paths = ["lib"]
   # = MANIFEST =
 end
