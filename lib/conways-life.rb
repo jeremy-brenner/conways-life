@@ -1,6 +1,6 @@
 
-require 'conways_life/grid'
-require 'conways_life/grid/cell'
+require 'conways-life/grid'
+require 'conways-life/grid/cell'
 
 class ConwaysLife
 
