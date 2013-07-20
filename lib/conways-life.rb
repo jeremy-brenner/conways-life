@@ -12,6 +12,7 @@ class ConwaysLife
     iterations.times do |i|
       @grid.tick
     end
+    self
   end
 
   def state
@@ -20,6 +21,7 @@ class ConwaysLife
 
   def parse_state( state )
     state.split(":").map { |coords| coords.split(',') }
+    self
   end
 
 end
