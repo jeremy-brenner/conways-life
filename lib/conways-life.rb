@@ -6,6 +6,7 @@ class ConwaysLife
 
   def initialize ( initial_state = "" )
     @grid = Grid.new parse_state( initial_state )
+    self
   end
 
   def tick ( iterations = 1 )

@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name              = 'conways-life'
-  s.version           = '0.0.3'
+  s.version           = '0.0.4'
   s.date              = '2013-07-20'
   s.platform          = Gem::Platform::RUBY
   s.authors           = ["Jeremy J Brenner"]
