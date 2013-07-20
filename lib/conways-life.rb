@@ -6,7 +6,6 @@ class ConwaysLife
 
   def initialize ( initial_state = "" )
     @grid = Grid.new parse_state( initial_state )
-    self
   end
 
   def tick ( iterations = 1 )
@@ -22,7 +21,6 @@ class ConwaysLife
 
   def parse_state( state )
     state.split(":").map { |coords| coords.split(',') }
-    self
   end
 
 end
